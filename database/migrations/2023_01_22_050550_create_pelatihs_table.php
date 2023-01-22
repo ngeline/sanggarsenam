@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->integer('users_id');
             $table->string('nama');
-            $table->integer('nik')->default('0');
+            $table->string('nik')->default('0');
             $table->string('jk');
             $table->text('alamat');
             $table->string('email');
-            $table->integer('telepon');
+            $table->string('telepon');
             $table->text('foto');
             $table->timestamps();
         });

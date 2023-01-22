@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('subs_id');
             $table->datetime('jatuh_tempo');
+            $table->string('total_tagihan')->nullable();
             $table->datetime('tgl_bayar')->nullable();
             $table->string('status')->default('Menunggu Pembayaran');
             $table->timestamps();
