@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('subcribe_statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('role')->default('anggota');
-            $table->string('password');
-            $table->rememberToken();
+            $table->integer('subs_id');
+            $table->datetime('jatuh_tempo');
+            $table->datetime('tgl_bayar')->nullable();
+            $table->string('status')->default('Menunggu Pembayaran');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('subcribe_statuses');
     }
 };
