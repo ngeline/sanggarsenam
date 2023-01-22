@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'status',
     ];
 
     /**
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function UserToAnggota()
+    {
+        return $this->belongsTo(Anggota::class, 'id', 'anggotas_id');
+    }
+
+    public function UserToPelatih()
+    {
+        return $this->belongsTo(Pelatih::class, 'id', 'pelatihs_id');
+    }
 }

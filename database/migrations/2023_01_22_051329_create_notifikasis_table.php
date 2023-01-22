@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('notifikasis', function (Blueprint $table) {
             $table->id();
             $table->integer('anggotas_id')->default('0');
+            $table->integer('pelatihs_id')->default('0');
             $table->integer('kelas_id')->default('0');
             $table->string('judul');
             $table->text('pesan');
